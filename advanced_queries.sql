@@ -15,11 +15,13 @@ SELECT * FROM books JOIN authors ON (authors.id = books.author_id) WHERE authors
 
 -- Find out how many books Albert Camus wrote.
 
-SELECT * FROM books JOIN authors ON (authors.id = books.author_id) WHERE authors.name = 'Albert Camus';
+--Remove COUNT() to list results
+SELECT COUNT(*) FROM books JOIN authors ON (authors.id = books.author_id) WHERE authors.name = 'Albert Camus';
 
 -- Find out how many books written before 1980 were by authors not from the US.
 
-SELECT * FROM books JOIN authors ON (books.author_id = authors.id) WHERE books.publication_date < 1980 AND authors.nationality NOT LIKE 'United States%';
+--Remove COUNT to list results
+SELECT COUNT(*) FROM books JOIN authors ON (books.author_id = authors.id) WHERE books.publication_date < 1980 AND authors.nationality NOT LIKE 'United States%';
 
 -- For these last two, you should not need a JOIN.
 
